@@ -1,0 +1,196 @@
+#
+# Proton Bound water clusters
+# Analyt Toluol/Xenon, p = 1000 mbar,
+# T = 303 K
+
+
+units(length = "cm", time = "s", quantity = "molec", act_energy = "cal/mol")
+
+
+ideal_gas(name = "water cluster reactor",
+      elements = " H O N ",
+      species = """ N2 H2O Cl1 Cl2 Cl3 Cl4 Cl5 Cl6 Cl7 Cl8 Cl9 """,
+      reactions = "all",
+      initial_state = state(temperature = 303.0,
+                        pressure = OneAtm)    )
+
+
+
+#-------------------------------------------------------------------------------
+#  Species data 
+#-------------------------------------------------------------------------------
+species(name = "H2O",
+    atoms = " H:2 O:1 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+
+species(name = "N2",
+    atoms = " N:2 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+species(name = "Cl1",
+    atoms = " H:3 O:1 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+species(name = "Cl2",
+    atoms = " H:5 O:2 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+species(name = "Cl3",
+    atoms = " H:7 O:3 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+species(name = "Cl4",
+    atoms = " H:9 O:4 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+species(name = "Cl5",
+    atoms = " H:11 O:5 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+species(name = "Cl6",
+    atoms = " H:13 O:6 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+species(name = "Cl7",
+    atoms = " H:15 O:7 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+species(name = "Cl8",
+    atoms = " H:17 O:8 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+species(name = "Cl9",
+    atoms = " H:19 O:9 ",
+    #thermo contains no actual data currently...
+    thermo = const_cp( t0 = 0.0,
+                       h0 = (0.0, 'kcal/mol') ),
+    transport = gas_transport(
+                     geom = "linear",
+                     diam =     2.92,
+                     well_depth =    38.00,
+                     polar =     0.79,
+                     rot_relax =   280.00),
+    note = "none"
+)
+
+#-------------------------------------------------------------------------------
+#  Reaction data 
+#-------------------------------------------------------------------------------
+
+reaction( "Cl1 + H2O + N2 => Cl2 + N2", [6.98E-29, 0.0, 0])
+reaction( "Cl2 + N2 => Cl1 + H2O + N2", [4.00E-27, 0.0, 0])
+reaction( "Cl2 + H2O + N2 => Cl3 + N2", [6.98E-29, 0.0, 0])
+reaction( "Cl3 + N2 => Cl2 + H2O + N2", [6.78E-19, 0.0, 0])
+reaction( "Cl3 + H2O + N2 => Cl4 + N2", [6.98E-29, 0.0, 0])
+reaction( "Cl4 + N2 => Cl3 + H2O + N2", [2.50E-16, 0.0, 0])
+reaction( "Cl4 + H2O + N2 => Cl5 + N2", [6.98E-29, 0.0, 0])
+reaction( "Cl5 + N2 => Cl4 + H2O + N2", [1.67E-13, 0.0, 0])
+reaction( "Cl5 + H2O + N2 => Cl6 + N2", [6.98E-29, 0.0, 0])
+reaction( "Cl6 + N2 => Cl5 + H2O + N2", [2.06E-12, 0.0, 0])
+reaction( "Cl6 + H2O + N2 => Cl7 + N2", [6.98E-29, 0.0, 0])
+reaction( "Cl7 + N2 => Cl6 + H2O + N2", [1.30E-11, 0.0, 0])
+reaction( "Cl7 + H2O + N2 => Cl8 + N2", [6.98E-29, 0.0, 0])
+reaction( "Cl8 + N2 => Cl7 + H2O + N2", [5.00E-11, 0.0, 0])
+reaction( "Cl8 + H2O + N2 => Cl9 + N2", [6.98E-29, 0.0, 0])
+reaction( "Cl9 + N2 => Cl8 + H2O + N2", [2.11E-10, 0.0, 0])
